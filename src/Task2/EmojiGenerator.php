@@ -4,8 +4,18 @@ namespace Cryptocurrency\Task2;
 
 class EmojiGenerator
 {
+    public $emoji = [
+        '🚀',
+        '🚃',
+        '🚄',
+        '🚅',
+        '🚇',
+    ];
+
     public function generate(): \Generator
     {
-        // @todo
+        foreach ($this->emoji as $emoji) {
+            yield $emoji;
+        }
     }
 }
