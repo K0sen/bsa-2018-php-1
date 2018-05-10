@@ -8,7 +8,7 @@ class MarketHtmlPresenter
 {
     public function present(CoinMarket $market): string
     {
-        $table = <<<NOWDOC
+        $table = <<<HEREDOC
         <table border="1" cellspacing="0" cellpadding="7" >
             <thead>
                 <tr>
@@ -21,7 +21,7 @@ class MarketHtmlPresenter
                 {$this->getCryptoRows($market)}
             </tbody>
         </table>
-NOWDOC;
+HEREDOC;
 
         return $table;
     }
@@ -42,7 +42,7 @@ NOWDOC;
             $currName = $currency->getName();
             $currLogo = $currency->getLogoUrl();
             $currPrice = $currency->getDailyPrice();
-            $rows .= <<<NOWDOC
+            $rows .= <<<HEREDOC
             <tr>
                 <td>{$currName}: {$currPrice}</td>
                 <td>
@@ -50,7 +50,7 @@ NOWDOC;
                 </td>
                 {$maxPriceColumn}
             </tr>
-NOWDOC;
+HEREDOC;
 
         }
 
