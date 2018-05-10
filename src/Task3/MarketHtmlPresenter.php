@@ -8,7 +8,7 @@ class MarketHtmlPresenter
 {
     public function present(CoinMarket $market): string
     {
-        $table = <<<HEREDOC
+        return <<<HEREDOC
         <table border="1" cellspacing="0" cellpadding="7" >
             <thead>
                 <tr>
@@ -22,8 +22,6 @@ class MarketHtmlPresenter
             </tbody>
         </table>
 HEREDOC;
-
-        return $table;
     }
 
     public function getCryptoRows(CoinMarket $market): string
