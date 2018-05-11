@@ -14,11 +14,13 @@ class CoinMarket
     public function maxPrice(): float
     {
         $currencies = $this->getCurrencies();
+        if (empty($currencies)) return 0;
+        
         $currPrices = array_map(function($currency) {
             return $currency->getDailyPrice();
         }, $currencies);
 
-        return max($currPrices) ?? 0;
+        return max($currPrices);
     }
 
     public function getCurrencies(): array
