@@ -18,7 +18,7 @@ class CoinMarket
             return $currency->getDailyPrice();
         }, $currencies);
 
-        return max($currPrices);
+        return max($currPrices) ?? 0;
     }
 
     public function getCurrencies(): array
