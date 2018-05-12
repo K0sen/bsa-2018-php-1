@@ -27,9 +27,11 @@ HEREDOC;
     private function getCryptoRows(CoinMarket $market): string
     {
         $rows = '';
-        $maxPriceColumn = "<td rowspan='{count($currencies)}'>{$market->maxPrice()}</td>";
+        $currencies = $market->getCurrencies();
+        $currCount = count($currencies);
+        $maxPriceColumn = "<td rowspan='{$currCount}'>{$market->maxPrice()}</td>";
 
-        foreach ($market->getCurrencies() as $key => $currency) {
+        foreach ($currencies as $key => $currency) {
             // For printing max price column
             if ($key > 0)
                 $maxPriceColumn = null;
