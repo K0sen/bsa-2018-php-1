@@ -24,7 +24,7 @@ class MarketHtmlPresenter
 HEREDOC;
     }
 
-    public function getCryptoRows(CoinMarket $market): string
+    private function getCryptoRows(CoinMarket $market): string
     {
         $rows = '';
         $maxPrice = $market->maxPrice();
